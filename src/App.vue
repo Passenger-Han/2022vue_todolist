@@ -1,26 +1,47 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="head">
+    <h1>TODO LIST</h1>
+  </div>
+  <todo-input v-on:addTodo="addTodoItem"></todo-input>
+  <todolist :todoItem="todoItem"></todolist>
+  <todofooter></todofooter>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import '@/assets/initial.css'
+
+import TodoInput from '@/components/todoInput.vue';
+import Todolist from '@/components/todolist.vue';
+import Todofooter from '@/components/todofooter.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    TodoInput,
+    Todolist,
+    Todofooter
+  },
+
+  data(){
+    return {
+      todoItem: [],
+    }
+  },
+
+  methods: {
+    addTodoItem: function(item){
+      this.todoItem.push(item);
+    },
+  },
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {font-family: 'Roboto', sans-serif; background: black;}
+#app {width: 400px; margin: 0 auto; padding: 24px; background: white;}
+.head {
+  margin-bottom: 8px;
 }
+
 </style>
