@@ -9,7 +9,7 @@
             <li>
                 <p class="name">{{ item }}</p>
                 <div class="crud-btn">
-                    <span>지우기</span>
+                    <span @click="Remove(i, item)">지우기</span>
                     <span>바꾸기</span>
                 </div>
             </li>
@@ -24,9 +24,9 @@ export default {
     ],
 
     methods: {
-        // nolist(){
-        //     this.$emit('addTodo', 'NO DATA!');
-        // },
+        Remove(index, item){
+            this.$emit('remove', index, item);
+        },
     },
 }
 </script>
@@ -49,6 +49,7 @@ export default {
             padding: 12px 8px;
 
             background: lightgray;
+            border-radius: 4px;
 
             .name {
                 // width: 80%;
