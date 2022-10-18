@@ -58,7 +58,7 @@ export default {
 
             .crud-btn {
                 // width: 10%;
-                flex-basis: 30%;
+                flex-basis: 37%;
                 flex-shrink: 0;
 
                 display: flex;
