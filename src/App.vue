@@ -2,7 +2,7 @@
   <div class="head">
     <h1>TODO LIST</h1>
   </div>
-  <todo-input v-on:addTodo="addTodoItem"></todo-input>
+  <todo-input @addTodo="addTodoItem"></todo-input>
   <todolist :todoItem="todoItem" @remove="removeItem"></todolist>
   <todofooter @removeAll="removeAllItems"></todofooter>
 </template>
@@ -35,6 +35,7 @@ export default {
 
   methods: {
     addTodoItem: function(item){
+      console.log(item);
       this.todoItem.push(item);
       localStorage.setItem(item, item);
     },
@@ -57,7 +58,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {font-family: 'Roboto', sans-serif; background: black;}
-#app {width: 100%; margin: 0 auto; padding: 24px; background: white;}
+#app {width: 100%; max-width: 420px; margin: 0 auto; padding: 24px; background: white;}
 .head {
   margin-bottom: 8px;
 }

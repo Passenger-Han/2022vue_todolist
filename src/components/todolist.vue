@@ -10,7 +10,7 @@
                 <p class="name">{{ item }}</p>
                 <div class="crud-btn">
                     <span @click="Remove(i, item)">지우기</span>
-                    <span>바꾸기</span>
+                    <!-- <span>바꾸기</span> -->
                 </div>
             </li>
         </template>
